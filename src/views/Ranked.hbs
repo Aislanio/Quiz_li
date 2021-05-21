@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/index.css"> <link rel="stylesheet" type="text/css" href="css/Ranked.css">
+    <title>Ranked / Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <main>
+            
+                 <article>
+                    <img src="Assets/{{this.id}}">
+                    <p>{{this.name}}</p>
+                    <i>10</i>
+                </article>
+            
+        </main>
+        <div>
+           {{#each orphanages}}
+                <span hidden
+                    data-id={{this.id}}
+                    data-name="{{this.name}}"
+                    data-about ="{{this.about}}"
+                    >
+                </span>
+            {{/each}}
+        </div>
+    </div>  
+    <script type="text/javascript">
+        const article = document.querySelector("main article");
+        const main = document.querySelector("main");
+        const orphanagesSpan = document.querySelectorAll("span");
+    orphanagesSpan.forEach(span =>{
+          const article_clone = article.cloneNode(true);
+          article_clone.querySelector("img").src = "Assets/"+span.dataset.id +".svg";
+          article_clone.querySelector("p").innerHTML = span.dataset.name;
+          article_clone.querySelector("i").innerHTML = span.dataset.about;
+          main.appendChild(article_clone);
+     });
+    </script>  
+</body>
+</html>
+

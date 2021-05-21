@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/perg.css">
+    <title>Perguntas /Quiz</title>
+</head>
+<body>
+    <header>
+        <img id="icon" src="Assets/icon.png">
+        <h2>Aislânio Amorim</h2>
+        <img src="Assets/5.svg">
+    </header>
+    <main>
+        <h1 class="title">Nome do autor do livro ?</h1><span><i id="contador">1</i>/10</span>
+        <div>
+            <label for="1">
+                <span>Jose de Alencar</span>
+                <input type="radio" id="1" value="1" name="perg">
+            </label>
+            
+            <label for="2">
+               
+                <span>Jose de Alencar</span>
+                 <input type="radio" id="2" value="2" name="perg">
+            </label>
+            <label for="3">
+                
+                <span>Jose de Alencar</span>
+                <input type="radio" id="3" value="3" name="perg">
+            </label>
+
+            <label for="4">
+               
+                <span>Jose de Alencar</span>
+                 <input type="radio" id="4" value="4" name="perg">
+            </label>
+
+            <label for="5">
+            
+                <span>Jose de Alencar</span>
+                <input type="radio" id="5" value="5" name="perg">
+            </label>
+        </div>
+        <form name="formulario" action="save-orphanage" method="post">
+            <input type="hidden" name="name" id="name">
+            <input type="hidden" name="about" id="about">
+        </form>
+        <button onclick="proximo()">Proximo</button>
+    </main>
+    <script type="text/javascript" src="js/peguntas.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.container main{
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-y:auto;
+
+}
+main article{
+	margin-bottom: 7px;
+}
+main article p{
+	font-size: 1.5rem;
+}
+article{
+	display: flex;
+	width: 100%;
+	border: 1px solid white;
+}
+article img{
+	width: 100%;
+	max-width: 100px;
+}
