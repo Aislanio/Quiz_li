@@ -16,14 +16,14 @@
                  <article>
                     <img src="Assets/{{this.id}}">
                     <p>{{this.name}}</p>
-                    <i>10</i>
+                    <i style="color: white;">10</i>
                 </article>
             
         </main>
         <div>
            {{#each orphanages}}
                 <span hidden
-                    data-id={{this.id}}
+                    data-id="{{this.id}}"
                     data-name="{{this.name}}"
                     data-about ="{{this.about}}"
                     >

@@ -1,10 +1,9 @@
 document.addEventListener('contextmenu', event => event.preventDefault());
 let contador_htl = document.querySelector("#contador");
-let acertos = 0;
+let que_acertos = 0;
 let questao = 0;
 const title = document.querySelector("h1");
 const respos = document.querySelectorAll("main div label span");
-console.log(title);
 const perguntas = ["Quem era o filho mais velho da familia citada e qual a série ele fazia ?","Qual é contexto historico do livro ?","Qual a cidade que Kurt e sua familia morava ?","Qual era o nome dos filhos de Franz","Quantos anos Franz tinha ?","Qual era o nome da esposa de Franz ?","Qual era o sobrenome de Franz ?","Qual node do primeiro Capitulo ?","Qual o verso que Franz lê no final do Capitulo?","o que Lotte usou para guarda sua boneca ?"]
 const respostas = [
 	{
@@ -115,7 +114,6 @@ function proximo(){
 		if (radios[i].type === 'radio' && radios[i].checked) {
         	// get value, set checked flag or do whatever you need to
         	resultado = radios[i].value; 
-        	console.log(resultado);
         };
     }
     const marcado = document.getElementById(resultado);
@@ -124,16 +122,17 @@ function proximo(){
     const final = respostas[questao];
     if (span_labe === final.resposta_pricipal){
     	label.classList.add("bandstand");
-    	++acertos;
-    	console.log("fp");
-    	proixmo_questao();
+    	
+    	setTimeout(proixmo_questao(), 5000);
     }else if(span_labe != final.resposta_pricipal){
     	label.classList.add("wrong");
-    	proixmo_questao();
+    	setTimeout(proixmo_questao(), 5000);
     }
 
 	
 		function proixmo_questao(){
+			++que_acertos;
+			console.log(que_acertos);
 			title.innerHTML = perguntas[questao];
 			for (let [key,value] of Object.entries(final)) {
 	    		respos[i].innerHTML = value;
