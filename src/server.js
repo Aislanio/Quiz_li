@@ -23,4 +23,7 @@ server
 .get('/ranked',pages.ranked)
 .post('/save-orphanage',pages.saveOrphanage)
 //ligar o servidor
-server.listen(9000);
+let port = process.env.PORT || 3000;
+app.listen(port, function () {
+    console.log('Umbler listening on port %s', port);
+});
